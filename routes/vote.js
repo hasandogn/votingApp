@@ -9,14 +9,23 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/all',  (req, res, next) =>{
-  connection.query('SELECT * FROM User', (err, result) => {
+  connection.query('SELECT * FROM Vote', (err, result) => {
     res.json({result});
   });
 });
 
-
 router.get('/sql/:id',  (req, res, next) =>{
-  connection.query('SELECT * FROM User where id= '+req.params.id, (err, result) => {
+  connection.query('SELECT * FROM Vote where id= '+req.params.id, (err, result) => {
+    res.json({result});
+  });
+});
+
+router.get('/sql/:id', (req, res, next) =>{
+  connection.query('SELECT * FROM')
+})
+
+router.get('/sql/:userId',  (req, res, next) =>{
+  connection.query('SELECT * FROM Vote where userId= '+req.params.userId, (err, result) => {
     res.json({result});
   });
 });
